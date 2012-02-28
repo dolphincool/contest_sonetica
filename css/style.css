@@ -1,0 +1,598 @@
+body {
+	margin: 0;
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	color: #404040;
+}
+ul, li, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	color: #1270b8;
+	border-bottom: 1px dotted #1270b8;
+	text-decoration: none;
+}
+.selectText{
+	color: #1270b8;
+	border-bottom: 1px dotted #1270b8;
+	cursor: pointer;
+}
+p{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+/*---------------*/
+img.avatarka{
+    display: none;
+}
+#mainStyle{
+	width: 822px;
+	text-align: left;
+}
+#blockTable{
+	height: 800px;
+}
+#blockTable > li{
+	float: left;
+	height: 800px;
+}
+#placePeople{
+	width: 220px;
+}
+#listPeople > li{
+	clear: both;
+	height: 30px;
+	width: 200px;
+	padding: 10px;
+	cursor: pointer;
+}
+#bonus{
+	margin-top: 60px;
+}
+#bonus li{
+	clear: both;
+	padding-left: 25px;
+	
+}
+#listPeople > li > ul {
+	height: 30px;
+}
+#listPeople > li > ul > li{
+	float: left;
+	height: 30px;
+	line-height: 2.5;
+	
+}
+#listPeople > li > ul > li.online{
+	background: url(../images/people_online.png) no-repeat;
+	background-position: center left;
+	width: 11px;
+	margin-right: 5px;
+}
+#listPeople > li > ul > li.offline{
+	background: url(../images/people_offline.png) no-repeat;
+	background-position: center left;
+	width: 11px;
+	margin-right: 5px;
+}
+#listPeople > li.active{
+	background: url(../images/bg_list.gif);
+	-moz-box-shadow: inset 0 1px 4px -1px #000; /* Для Firefox */
+    -webkit-box-shadow: inset 0 1px 4px -1px #000; /* Для Safari и Chrome */
+    box-shadow: inset 0 1px 4px -1px #000; /* Параметры тени */
+	color: white;
+}
+#listPeople > li > ul> li > img{
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* KHTML */
+	border-radius: 5px; /* CSS3 */
+}
+#listPeople > li > ul> li.nameList{
+	width: 120px;
+}
+#listPeople > li > ul> li.countMsg{
+	width: 20px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+#listPeople > li:hover > ul > li > div.removeUser{
+	width: 20px;
+	height: 30px;
+	background: url(../images/remove_msg.png) no-repeat;
+	background-position: center center;
+	cursor: pointer;
+}
+#listPeople > li > ul> li > div.blockCount{
+	float: right;
+}
+#listPeople > li > ul> li > div.blockCount > span{
+	padding-left: 4px;
+	padding-right: 4px;
+	background: #f47600;
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Safari, Chrome */
+	-khtml-border-radius: 10px; /* KHTML */
+	border-radius: 10px; /* CSS3 */
+	height: 13px;
+	margin-top: 10px;
+	color: white;
+	font-size: 7pt;
+	line-height: 1.5;
+	text-align: center;
+	-moz-box-shadow: inset 0 1px 4px -1px #a19e9e; /* Для Firefox */
+    -webkit-box-shadow: inset 0 1px 4px -1px #a19e9e; /* Для Safari и Chrome */
+    box-shadow: inset 0 1px 4px -1px #a19e9e; /* Параметры тени */
+}
+#listPeople > li.active > ul > li > div.blockCount > span{
+	color: #f47600;
+	background: white;
+}
+#shadowLi{
+	position: relative;
+	width: 20px;
+	background: url(../images/leftshadow.png) repeat-y;
+	
+}
+#placeText{
+	margin-left: -20px;
+	width: 601px;
+	background: #f1f5fb;
+	border-left: 1px solid #e9eef5;
+}
+#infoPeople {
+	height: 80px;
+	padding: 10px;
+	background: #e4ecf7;
+	border-bottom: 1px solid #d0d9e3;
+}
+#infoPeople > li{
+	float: left;
+	height: 80px;
+	margin-left: 10px;
+}
+#peopleName > a{
+	border-bottom: 1px solid #1270b8;
+	font-size: 16pt;
+}
+#peopleName {
+	padding-top: 5px;
+	width: 340px;
+}
+#peopleAction{
+	padding-top: 18px;
+}
+#peoplePhoto{
+	width: 80px;
+}
+#peoplePhoto img{
+	width: 80px;
+	height: 80px;
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Safari, Chrome */
+	-khtml-border-radius: 10px; /* KHTML */
+	border-radius: 10px; /* CSS3 */
+}
+#peopleCountry{
+	margin-top: 10px;
+}
+#firstMessage{
+	margin-top: 265px;
+	padding: 20px;
+}
+#selectWord{
+	margin: 20px;
+	position: absolute;
+	top: 280px;
+	width: 517px;
+	background: white;
+	height: 70px;
+	border: 1px solid #ecf0f6;
+	padding: 20px;
+	-moz-border-radius: 6px; /* Firefox */
+	-webkit-border-radius: 6px; /* Safari, Chrome */
+	-khtml-border-radius: 6px; /* KHTML */
+	border-radius: 6px; /* CSS3 */
+	-moz-box-shadow: 0 1px 4px -1px #a19e9e; /* Для Firefox */
+    -webkit-box-shadow: 0 1px 4px -1px #a19e9e; /* Для Safari и Chrome */
+    box-shadow: 0 1px 4px -1px #a19e9e; /* Параметры тени */
+	margin-bottom: 20px;
+    display: none;
+}
+div.sizeText{
+	font-size: 13pt;
+}
+#updateWord{
+	background: url(../images/updateWord.png) no-repeat;
+	background-position: left center;
+	float: right;
+	padding-left: 13px;
+	height: 15px;
+}
+#bootomSelectWord{
+	background: url(../images/bottomWord.png) no-repeat;
+	background-position: top center;
+	padding-top: 15px;
+	top: 110px;
+	position: absolute;
+	height: 40px;
+	width: 156px;
+	color: #bcbec3;
+	margin-left: 200px;
+}
+#blockSend{
+	top: 590px;
+	margin: 20px;
+	position: absolute;
+}
+#infoMessage, #errorMsg{
+	background: url(../images/info.png) no-repeat;
+	background-position: left center;
+	padding-left: 18px;
+}
+#errorMsg{
+    display: none;
+}
+#styleTextarea{
+	margin-top: 10px;
+	resize: none;
+	width: 534px;
+	height: 80px;
+	padding: 10px;
+	font-family: Tahoma, ARial;
+	font-size: 9pt;
+	color: #404040;
+	-moz-box-shadow: inset 0 2px 5px -1px #a19e9e; /* Для Firefox */
+    -webkit-box-shadow: inset 0 2px 5px -1px #a19e9e; /* Для Safari и Chrome */
+    box-shadow: inset 0 2px 5px -1px #a19e9e; /* Параметры тени */
+	background: #f7f7f7;
+	border: 1px solid #ebebeb;
+}
+#btnSend{
+	margin-top: 10px;
+	height: 29px;
+}
+#btnSend li{
+	float: left;
+	margin-right: 35px;
+	height: 29px;
+	line-height: 2.2;
+}
+li.sendPresent{
+	background: url(../images/add_present.png) no-repeat;
+	background-position: left center;
+	padding-left: 27px;
+	cursor: pointer;
+}
+li.sendRation{
+	background: url(../images/add_star.png) no-repeat;
+	background-position: left center;
+	padding-left: 22px;
+}
+li.sendRation:hover{
+	background: url(../images/add_star_hover.png) no-repeat;
+	background-position: left center;
+}
+input[type=button]{
+	background: url(../images/bg_btn.gif);
+	border: none;
+	color: white;
+	height: 29px;
+	font-family: Tahoma, Arial;
+	-moz-border-radius: 4px; /* Firefox */
+	-webkit-border-radius: 4px; /* Safari, Chrome */
+	-khtml-border-radius: 4px; /* KHTML */
+	border-radius: 4px; /* CSS3 */
+	padding-left: 15px;
+	padding-right: 15px;
+    cursor: pointer;
+}
+
+ul.textMsg{
+	display: none;
+	height: 490px;
+	width: 601px;
+	overflow: auto;
+
+}
+ul.textMsg > li{
+	clear: both;
+	width: 583px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+ul.textMsg li:hover{
+	background: #fafafb;
+	cursor: default;
+}
+ul.textMsg > li:hover > ul > li.removeMsg{
+	background: url(../images/remove_msg.png) no-repeat;
+	background-position: center center;
+	cursor: pointer;
+}
+ul.textMsg > li > ul > li  {
+	float: left;
+	margin-right: 15px;
+}
+div.clearer{
+	clear: both;
+}
+ul.textMsg > li > ul > li.styleName{
+	min-width: 70px;
+	text-align: right;
+	color:  #1270b8;
+}
+ul.textMsg > li > ul > li.removeMsg, ul.textMsg > li > ul > li.removeMsgNone{
+	width: 11px;
+	margin-right: 5px;
+	height: 14px;
+}
+ul.textMsg > li > ul > li.styleNameSender{
+	min-width: 70px;
+	text-align: right;
+	color:  #a6a6a6;
+}
+ul.textMsg > li > ul > li.styleMsg{
+	width: 420px;
+}
+ul.textMsg > li > ul > li.styleMsgRemoved{
+	width: 420px;
+	color: #a6a6a6;
+}
+ul.textMsg > li > ul > li.styleTime{
+	color: #a6a6a6;
+	margin-right: 1px;
+}
+ul.textMsg > li > ul > li.styleTimeHeight{
+	color: #a6a6a6;
+	margin-right: 1px;
+	height: 53px;
+	line-height: 53px;
+}
+ul.textMsg > li > ul > li.removedIco{
+	min-width: 11px;
+	height: 14px;
+	background: url(../images/removed.png) no-repeat;
+	background-position: center center;
+	margin-right: 0;
+}
+ul.textMsg > li > ul > li.removed{
+	min-width: 11px;
+	height: 14px;
+	margin-right: 0;
+}
+#sendRationUser, #sendPresentUser, ul.sendLoveUser{
+	height: 53px;
+}
+#sendRationUser > li:first-child{
+	background: url(../images/ration.png) no-repeat;
+	background-position: center center;
+	width: 53px;
+	height: 53px;
+	color: white;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bold;
+}
+#sendRationUser > li, #sendPresentUser > li, ul.sendLoveUser > li{
+	float: left;
+	height: 53px;
+	margin-right: 15px;
+	color: #a6a6a6;
+	line-height: 55px;
+}
+ul.sendLoveUser > li{
+	line-height: 10px;
+}
+ul.sendLoveUser > li:first-child{
+	width: 63px;
+	margin-right: 8px;
+}
+ul.sendLoveUser > li:last-child{
+	padding-top: 13px;
+}
+ul.sendLoveUser{
+	clear: both;
+}
+/*-------start removed block-----*/
+#blockPopup{
+	display: none;
+	position: absolute;
+	height: 698px;
+	width: 602px;
+	top: 101px;
+	left: 220px;
+	background: black;
+	opacity: 0.50;
+	filter: alpha(Opacity=50);
+	z-index: 1;
+}
+#blockRemoveMsgText{
+	display: none;
+	border: 5px solid #3d3d3d;
+	background: white;
+	position: absolute;
+	left: 370px;
+	top: 150px;
+	min-height: 120px;
+	width: 310px;
+	z-index: 2;
+	padding-left: 12px;
+	padding-top: 12px;
+	
+}
+div.closeBlockPopup{
+	position: absolute;
+	margin-top: -12px;
+	margin-right: 5px;
+	right: 0;
+	background: url(../images/remove_msg.png) no-repeat;
+	background-position: center center;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+#blockRemoveMsgText p:before{
+	content: "«";
+}
+
+#blockRemoveMsgText p{
+	color: #969696;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	min-height: 50px;
+	padding-right: 12px;
+}
+#blockRemoveMsgText p:after{
+	content: "»";
+}
+#blockRemoveMsg{
+	padding: 6px;
+	height: 30px;
+	margin-left: -12px;
+	background: #efefef;
+}
+#blockRemoveMsg li{
+	float: left;
+	height: 29px;
+	margin-right: 12px;
+	margin-left: 4px;
+	line-height: 29px;
+}
+#exceptDellNone{
+	color: #969595;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/*-------end removed block-----*/
+/*---------add star---------------*/
+#blockAddStar{
+	display: none;
+	border: 5px solid #3d3d3d;
+	background: white;
+	position: absolute;
+	left: 320px;
+	top: 250px;
+	height: 70px;
+	width: 360px;
+	z-index: 3;
+	padding: 12px;
+}
+#selectStar{
+	height: 34px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+#selectStar li{
+	float: left;
+	background: url(../images/select_star.png) no-repeat;
+	background-position: center center;
+	margin-right: 2px;
+	width: 34px;
+	height: 34px;
+	line-height: 38px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+#selectStar li:hover{
+	background: url(../images/select_star_hover.png) no-repeat;
+	cursor: pointer;
+}
+/*---------end star---------------*/
+/*------ presents--------*/
+#presents{
+    position: absolute;
+    z-index: 100;
+    border: 7px solid #181919;
+    width: 670px;
+    height: 690px;
+    background-color: white;
+    top: 10px;
+    left: 70px;
+    display: none;
+}
+#closePresent{
+    float:right;
+    height: 50px;
+    width: 50px;
+    background: url('../images/closePres.gif') no-repeat #EAF3FF;
+    background-position: center;
+    cursor: pointer;
+}
+#presentsLogo{
+    font-size: 20px;
+    margin: 25px 0px 30px 20px;
+}
+#presentsContent{
+    margin-left: 25px;
+    width: 620px;
+    overflow: hidden;
+}
+div.presentTitle{
+    height: 25px;
+}
+#presentVip, div.presentCat{
+    float:left;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;    
+}
+#presentVip{
+    margin-left: 4px;
+}
+div.presentCat{
+    width: 120px;
+    background: url('../images/pres_price.jpg') no-repeat;
+    background-position: right;
+}
+div.presentLine{
+    float: left;
+    margin-left: 8px;
+    margin-top: 7px;
+    width: 490px;
+    height: 1px;
+    background-color: #E1E2E5;
+}
+
+ul.presentsPictures{
+    padding-left: 12px;
+    width: 5000px;
+    height: 95px;
+}
+ul.presentsPictures > li{
+    float: left;
+    width: 77px;
+    cursor: pointer;
+
+}
+ul.presentsPictures img:hover{
+    padding: 2px;
+    border: 1px solid #E1E2E5;  
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;    
+	-moz-box-shadow: 0 1px 4px -1px #a19e9e; /* Для Firefox */
+    -webkit-box-shadow: 0 1px 4px -1px #a19e9e; /* Для Safari и Chrome */
+    box-shadow: 0 1px 4px -1px #a19e9e; /* Параметры тени */    
+}
+div.presentErrow_left, div.presentErrow_right{
+    width: 25px;
+    height: 24px;
+    position: absolute;
+    margin-top: -70px;
+}
+div.presentErrow_left{
+    background: url('../images/present_arrowLeft.png');
+    left: 5px;
+    margin-top: 25px;
+}
+div.presentErrow_right{
+    background: url('../images/present_arrowRight.png');  
+    right: 3px;
+          
+}
