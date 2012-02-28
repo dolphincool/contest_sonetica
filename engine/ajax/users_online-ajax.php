@@ -1,4 +1,7 @@
 <?php
+/*
+* мониторинг онлайн
+*/
 require_once '../../config/config.php';
 $db = start_db();
 
