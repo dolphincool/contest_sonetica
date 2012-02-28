@@ -1,13 +1,13 @@
 <?php
 /*
-* Ñîîáùåíèÿ
+* Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ
 */
 require_once '../../config/config.php';
 $action = $_REQUEST['action'];
 $db = start_db();
 switch ($action){
     case 'addMess':
-        //åìóëÿöèÿ îøèáêè 
+        //ÐµÐ¼ÑƒÐ»ÑÑ†Ð¸Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ 
         $error = rand(1,10);
         if ($error == 2){
             echo 'error';
@@ -28,7 +28,7 @@ switch ($action){
             
         }
     break;
-    //îòïðàâèòü îöåíêó
+    //Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ð¾Ñ†ÐµÐ½ÐºÑƒ
     case 'addRating':
         $rating = $_POST['rating'];
         $from = $_POST['from'];
@@ -38,7 +38,7 @@ switch ($action){
         ', $from, $to, $rating, time());
         mysql_query($query, $db);       
     break;
-	//îòïðàâèòü ñèìïàòèþ
+	//Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ¸Ð¼Ð¿Ð°Ñ‚Ð¸ÑŽ
     case 'addRating_Sympathy':
         $id = $_POST['id'];
         $rating = $_POST['rating'];
@@ -50,7 +50,7 @@ switch ($action){
         mysql_query($query, $db);
         mysql_query(sprintf('DELETE FROM '.DB_PREFIX.'Messages WHERE ID_message="%d"', $id), $db);      
     break;    
-    //îòïðàâèòü ïîäàðîê
+    //Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð´Ð°Ñ€Ð¾Ðº
     case 'addPresent':
         $present = $_POST['id_present'];
         $from = $_POST['from'];
@@ -60,7 +60,7 @@ switch ($action){
         ', $from, $to, $present, time());
         mysql_query($query, $db);          
     break;
-    //ïîëó÷àåì ñïèñîê ñîîáùåíèé äëÿ þçåðîâ
+    //Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹ Ð´Ð»Ñ ÑŽÐ·ÐµÑ€Ð¾Ð²
     case 'get_listMess':
         
         $from = $_REQUEST['from'];
@@ -88,7 +88,7 @@ switch ($action){
         reset_data();
         echo json_encode($messages);
     break;
-    //ïîëó÷åíèå íîâûõ ñîîáùåíèé íå ó÷èòûâàÿ òåõ, ÷òî óæå ïîëó÷åíû
+    //Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð½Ð¾Ð²Ñ‹Ñ… ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹ Ð½Ðµ ÑƒÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ñ Ñ‚ÐµÑ…, Ñ‡Ñ‚Ð¾ ÑƒÐ¶Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ñ‹
     case 'get_newMessages':
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];
@@ -122,13 +122,13 @@ switch ($action){
         endwhile;
         echo json_encode($messages);           
     break;
-    //óäàëåíèå ñîîáùåíèé
+    //ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹
     case 'deleteMess':
         $id = $_POST['id'];
         $query = sprintf('UPDATE '.DB_PREFIX.'Messages SET del_status=1 WHERE ID_message="%d"', mysql_escape_string($id));
         mysql_query($query, $db);
     break;
-    //ýìóëÿöèÿ óäàëåíèÿ ñîîáùåíèé
+    //ÑÐ¼ÑƒÐ»ÑÑ†Ð¸Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹
     case 'new_Deleted':
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];        
@@ -145,7 +145,7 @@ switch ($action){
         endwhile;   
        echo json_encode($del_messages);
     break;
-    //ïðîâåðêà íà íàëè÷åå íîâûõ ñîîáùåíèé
+    //Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð½Ð°Ð»Ð¸Ñ‡ÐµÐµ Ð½Ð¾Ð²Ñ‹Ñ… ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹
     case 'haveMess':
         $id = $_POST['id'];
         get_messages($id);
