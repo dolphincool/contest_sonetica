@@ -1,13 +1,13 @@
 <?php
 /*
-* Ñîîáùåíèÿ
+* Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ
 */
 require_once '../../config/config.php';
 $action = $_REQUEST['action'];
 $db = start_db();
 switch ($action){
     case 'addMess':
-        //åìóëÿöèÿ îøèáêè 
+        //ÐµÐ¼ÑƒÐ»ÑÑ†Ð¸Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ 
         $error = rand(1,10);
         if ($error == 2){
             echo 'error';
@@ -62,7 +62,7 @@ switch ($action){
     break;
     
     case 'get_listMess':
-        //ïîëó÷àåì ñïèñîê ñîîáùåíèé äëÿ þçåðîâ
+        //Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹ Ð´Ð»Ñ ÑŽÐ·ÐµÑ€Ð¾Ð²
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];
         get_messages($from, 1, $to);
