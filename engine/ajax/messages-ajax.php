@@ -1,13 +1,13 @@
 <?php
 /*
-* Сообщения
+* ���������
 */
 require_once '../../config/config.php';
 $action = $_REQUEST['action'];
 $db = start_db();
 switch ($action){
     case 'addMess':
-        //емуляция ошибки 
+        //�������� ������ 
         $error = rand(1,10);
         if ($error == 2){
             echo 'error';
@@ -28,7 +28,7 @@ switch ($action){
             
         }
     break;
-    //отправить оценку
+    
     case 'addRating':
         $rating = $_POST['rating'];
         $from = $_POST['from'];
@@ -38,7 +38,7 @@ switch ($action){
         ', $from, $to, $rating, time());
         mysql_query($query, $db);       
     break;
-	//отправить симпатию
+
     case 'addRating_Sympathy':
         $id = $_POST['id'];
         $rating = $_POST['rating'];
@@ -50,7 +50,7 @@ switch ($action){
         mysql_query($query, $db);
         mysql_query(sprintf('DELETE FROM '.DB_PREFIX.'Messages WHERE ID_message="%d"', $id), $db);      
     break;    
-    //отправить подарок
+        
     case 'addPresent':
         $present = $_POST['id_present'];
         $from = $_POST['from'];
@@ -60,9 +60,9 @@ switch ($action){
         ', $from, $to, $present, time());
         mysql_query($query, $db);          
     break;
-    //получаем список сообщений для юзеров
+    
     case 'get_listMess':
-        
+        //�������� ������ ��������� ��� ������
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];
         get_messages($from, 1, $to);
@@ -88,7 +88,7 @@ switch ($action){
         reset_data();
         echo json_encode($messages);
     break;
-    //получение новых сообщений не учитывая тех, что уже получены
+    
     case 'get_newMessages':
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];
@@ -96,8 +96,8 @@ switch ($action){
         $query = sprintf('
             SELECT * FROM '.DB_PREFIX.'Messages 
             WHERE ((from_user_mess="%d" OR from_user_mess="%d") AND (to_user_mess="%d" OR to_user_mess="%d")) 
-                     AND ID_message>"%d"
-            ORDER BY ID_message ASC', $from , $to, $from , $to, $last_ID);
+                     AND (message_status_from="%d" OR message_status_to="%d") AND ID_message>"%d"
+            ORDER BY ID_message ASC', $from , $to, $from , $to, 1, 1, $last_ID);
         $send_query = mysql_query($query, $db);
         while ($result = mysql_fetch_object($send_query)) :
             if ($result -> from_user_mess == $from){
@@ -122,13 +122,13 @@ switch ($action){
         endwhile;
         echo json_encode($messages);           
     break;
-    //удаление сообщений
+        
     case 'deleteMess':
         $id = $_POST['id'];
         $query = sprintf('UPDATE '.DB_PREFIX.'Messages SET del_status=1 WHERE ID_message="%d"', mysql_escape_string($id));
         mysql_query($query, $db);
     break;
-    //эмуляция удаления сообщений
+    
     case 'new_Deleted':
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];        
@@ -145,7 +145,7 @@ switch ($action){
         endwhile;   
        echo json_encode($del_messages);
     break;
-    //проверка на наличее новых сообщений
+    
     case 'haveMess':
         $id = $_POST['id'];
         get_messages($id);
