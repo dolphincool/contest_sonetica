@@ -2,6 +2,10 @@
 require_once 'config/config.php';
 $db = start_db();
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
