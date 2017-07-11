@@ -4,8 +4,6 @@ $db = start_db();
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
