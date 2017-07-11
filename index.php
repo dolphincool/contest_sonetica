@@ -2,7 +2,6 @@
 require_once 'config/config.php';
 $db = start_db();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +68,7 @@ $db = start_db();
 										<?php };?>
 								</li>
 								<li id="ava_<?php echo $data->ID_user ?>" class="getAvatar">
-                                    <img class="preloader" src="images/ajax-loader.gif" width="20" height="20"/>
+                                    <img class="preloader" src="images/ajax-loader.gif" width="16" height="16"/>
                                     <div id="images/<?php echo $data->Avatar?>" class="avatarka"></div>
 									
                                 </li>
